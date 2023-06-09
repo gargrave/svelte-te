@@ -1,16 +1,10 @@
+<!-- https://tailwind-elements.com/docs/standard/components/buttons -->
+<!-- https://getbootstrap.com/docs/5.3/components/buttons -->
 <script lang="ts">
-	// https://tailwind-elements.com/docs/standard/components/buttons/
-	// TODO: re-use this type def
-	type ButtonType = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info';
+	import Spinner from './Spinner.svelte';
+	import type { ColorType } from './components.types';
 
-	// primary: '',
-	// secondary: '',
-	// success: '',
-	// danger: '',
-	// warning: '',
-	// info: '',
-
-	const buttonTypeStyles: Record<ButtonType, string> = {
+	const buttonTypeStyles: Record<ColorType, string> = {
 		primary: 'bg-primary hover:bg-primary-600 focus:bg-primary-600 active:bg-primary-700',
 		secondary:
 			'bg-secondary-200 hover:bg-secondary-400 focus:bg-secondary-400 active:bg-secondary-500',
@@ -20,28 +14,30 @@
 		info: 'bg-info hover:bg-info-600 focus:bg-info-600 active:bg-info-700'
 	};
 
-	const textColor: Record<ButtonType, string> = {
+	const textColor: Record<ColorType, string> = {
 		primary: 'text-white',
-		secondary: 'text-primary-700',
+		secondary: 'text-secondary-800',
 		success: 'text-white',
 		danger: 'text-white',
 		warning: 'text-white',
 		info: 'text-white'
 	};
 
-	export let btnType: ButtonType = 'primary';
+	// TODO: 'link' type button
+	// TODO: 'outline' type button
+	// TODO: disabled state + styling
+	// TODO: buttons with loaders
+
+	export let colorType: ColorType = 'primary';
 	export let block = false;
+	export let type: 'button' | 'submit' = 'button';
+	export let isLoading = false;
 </script>
 
-<!-- TODO: 'link' type button -->
-<!-- TODO: 'outline' type button -->
-<!-- TODO: disabled state + styling -->
-<!-- TODO: buttons with loaders -->
-
 <button
-	type="button"
-	class="{buttonTypeStyles[btnType]} {textColor[btnType]}
-		inline-block rounded px-6 pb-2 pt-2.5 text-sm
+	{type}
+	class="{buttonTypeStyles[colorType]} {textColor[colorType]}
+		inline-block relative rounded px-6 pb-2 pt-2.5 text-sm
 		font-medium uppercase leading-normal
 		transition duration-150 ease-in-out
 		focus:outline-none focus:ring-0
@@ -53,7 +49,7 @@
 		dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]
 		dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]
 		dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-	class:w-full={block}
->
+	class:w-full={block}>
 	<slot />
+	{#if isLoading}<Spinner asOverlay size="sm" color="text-neutral-200" />{/if}
 </button>
