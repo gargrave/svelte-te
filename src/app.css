@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*--------------------------------------------------
+ * Some extra "Tailwind-like" utility classes
+ *------------------------------------------------*/
+
+.trans-neg-50 {
+	transform: translate(-50%, -50%);
+}
+
+.trans-y-neg-50 {
+	transform: translateY(-50%);
+}
+
+.wrap-any {
+	overflow-wrap: anywhere;
+}
+
+.flex-center {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.fill-parent {
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+}
+
+.hidden-text {
+	color: transparent;
+	font-size: 0;
+}
