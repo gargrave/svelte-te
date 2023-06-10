@@ -7,13 +7,17 @@
 </script>
 
 <UiSection title="Alert">
-	<Heading tag="h5">Basic Alert types</Heading>
-	<!-- TODO: replace with checkbox component when it exists -->
-	<label>
-		<input type="checkbox" checked={hideIcon} on:change={() => (hideIcon = !hideIcon)} />
-		Hide icons
-	</label>
+	<div slot="blurb">
+		<div class="mt-5">
+			<!-- TODO: replace with checkbox component when it exists -->
+			<label>
+				<input type="checkbox" checked={hideIcon} on:change={() => (hideIcon = !hideIcon)} />
+				Hide icons
+			</label>
+		</div>
+	</div>
 
+	<Heading tag="h5">Basic Alert types</Heading>
 	<div class="mt-4 flex flex-col gap-2">
 		{#each colorTypes as colorType}
 			<Alert {colorType} {hideIcon}>

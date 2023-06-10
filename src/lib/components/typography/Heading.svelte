@@ -11,8 +11,9 @@
 	export let color = 'text-gray-800 dark:text-gray-100';
 	export let classes = '';
 	export let tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h1';
+	export let id: string | undefined = undefined;
 </script>
 
-<svelte:element this={tag} class="mb-2 mt-0 {color} {textSizes[tag]}{classes ? ` ${classes}` : ''}">
+<svelte:element this={tag} {id} class="mb-2 mt-0 {color} {textSizes[tag]} {classes}">
 	<slot />
 </svelte:element>
