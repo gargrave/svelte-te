@@ -5,3 +5,8 @@ export type ColorType = 'primary' | 'secondary' | 'success' | 'danger' | 'warnin
 // danger: '',
 // warning: '',
 // info: '',
+
+export interface TeModal {
+	hide: () => void;
+	show: () => void;
+}

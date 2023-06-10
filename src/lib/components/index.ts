@@ -10,3 +10,4 @@ export { Alert, Button, Divider, Heading, Icon, Link, Spinner };
 
 export * from './inputs';
 export * from './modals';
+export * from './components.types.ts';

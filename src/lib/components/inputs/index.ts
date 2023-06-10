@@ -1,3 +1,4 @@
+import InputField from './InputField.svelte';
 import Range from './Range.svelte';
 
-export { Range };
+export { InputField, Range };

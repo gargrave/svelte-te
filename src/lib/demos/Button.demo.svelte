@@ -4,6 +4,7 @@
 	import { colorTypes } from './demos.helpers';
 
 	let isLoading = false;
+	let disabled = false;
 </script>
 
 <UiSection title="Button">
@@ -17,6 +18,15 @@
 				on:change={() => (isLoading = !isLoading)} />
 			Show loaders
 		</label>
+
+		<label>
+			<input
+				class="ml-4"
+				type="checkbox"
+				checked={disabled}
+				on:change={() => (disabled = !disabled)} />
+			Disable all buttons
+		</label>
 	</div>
 
 	<Heading tag="h5">Basic button types</Heading>
@@ -24,7 +34,7 @@
 
 	<div class="flex flex-wrap gap-2">
 		{#each colorTypes as colorType}
-			<Button {colorType} {isLoading}>{colorType}</Button>
+			<Button {colorType} {isLoading} {disabled}>{colorType}</Button>
 		{/each}
 	</div>
 	<Divider />
@@ -33,7 +43,7 @@
 	<p>Block buttons take up the full width of the container.</p>
 	<div class="mt-4 flex flex-col gap-2">
 		{#each colorTypes as colorType}
-			<Button {colorType} block {isLoading}>{colorType}</Button>
+			<Button {colorType} block {isLoading} {disabled}>{colorType}</Button>
 		{/each}
 	</div>
 </UiSection>

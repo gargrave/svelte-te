@@ -2,10 +2,12 @@
 	import { Button, Modal, ModalBody, ModalFooter } from '$lib/components';
 	import Heading from '$lib/components/Heading.svelte';
 
-	const id = 'demoModal1';
+	const id = 'demoModal__basic';
 </script>
 
-<Button data-te-toggle="modal" data-te-target="#{id}">Show modal</Button>
+<div class="mt-4">
+	<Button data-te-toggle="modal" data-te-target="#{id}">Launch simple modal</Button>
+</div>
 
 <Modal {id} title="Awesome Demo Modal">
 	<ModalBody>
@@ -30,7 +32,7 @@
 			venenatis cras sed felis eget. Pretium aenean pharetra magna ac.
 		</p>
 	</ModalBody>
-	<ModalFooter standardCloseButton />
+	<ModalFooter />
 </Modal>
 
 <style>

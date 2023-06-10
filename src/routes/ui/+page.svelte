@@ -5,8 +5,8 @@
 	import { Divider, Heading, Link } from '$lib/components';
 
 	onMount(async () => {
-		const { Modal, initTE } = await import('tw-elements');
-		initTE({ Modal });
+		const { Input, Modal, initTE } = await import('tw-elements');
+		initTE({ Input, Modal });
 	});
 </script>
 
@@ -19,8 +19,6 @@
 		</Link>
 	</p>
 
-	<ModalDemo />
-
 	<Heading classes="mt-4" tag="h4">Table of Contents</Heading>
 	<ul class="ml-6 list-disc">
 		<li><a href="#components">General Components</a></li>
@@ -32,6 +30,7 @@
 	<Heading id="components" tag="h2">General Components</Heading>
 	<AlertDemo />
 	<ButtonDemo />
+	<ModalDemo />
 	<SpinnerDemo />
 	<Divider />
 
