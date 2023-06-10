@@ -1,8 +1,7 @@
 <!-- https://tailwind-elements.com/docs/standard/components/modal -->
 <script lang="ts">
-	import Button from '../Button.svelte';
 	import Heading from '../Heading.svelte';
-	import CloseButton from './CloseButton.svelte';
+	import ModalCloseButton from './ModalCloseButton.svelte';
 
 	export let id: string;
 	export let title: string;
@@ -26,10 +25,11 @@
 			transition-all duration-300 ease-in-out translate-y-[-50px]"
 		style:max-width="{maxWidth}px">
 		<div
-			class=" pointer-events-auto relative flex w-full flex-col rounded-md
+			class="pointer-events-auto relative flex w-full flex-col rounded-md
 				border-none bg-white bg-clip-padding text-current shadow-lg outline-none
 				top-1/2 min-[576px]:translate-y-[-75%] max-[576px]:translate-y-[-50%]
-				dark:bg-neutral-600 min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)]">
+				dark:bg-zinc-700 min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)]">
+			<!-- ModalHeader -->
 			<div
 				class="p-4 flex flex-shrink-0 items-center justify-between rounded-t-md
 					border-b-2 border-neutral-100 border-opacity-100 dark:border-opacity-50">
@@ -37,22 +37,10 @@
 				<Heading tag="h5" classes="text-xl font-medium leading-normal !mb-0" id={label}>
 					{title}
 				</Heading>
-
-				<CloseButton />
+				<ModalCloseButton />
 			</div>
 
-			<!--Modal body-->
-			<div class="_modal-body relative flex-auto p-4" data-te-modal-body-ref>
-				<slot name="body" />
-			</div>
-
-			<!--Modal footer-->
-			<div
-				class="p-4 flex flex-shrink-0 flex-wrap items-center justify-end gap-2 rounded-b-md
-					border-t-2 border-neutral-100 border-opacity-100 dark:border-opacity-50">
-				<Button colorType={'secondary'} data-te-modal-dismiss>Close</Button>
-				<Button colorType={'primary'}>Save changes</Button>
-			</div>
+			<slot />
 		</div>
 	</div>
 </div>
@@ -64,10 +52,5 @@
 		@media (max-width: 576px) {
 			max-width: calc(100vw - 12px * 2) !important;
 		}
-	}
-
-	._modal-body {
-		max-height: calc(100vh - 73px - 64px - 88px);
-		overflow-y: scroll;
 	}
 </style>
