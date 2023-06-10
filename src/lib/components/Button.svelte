@@ -49,7 +49,8 @@
 		dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]
 		dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]
 		dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-	class:w-full={block}>
+	class:w-full={block}
+	{...$$restProps}>
 	<slot />
 	{#if isLoading}<Spinner asOverlay size="sm" color="text-neutral-200" />{/if}
 </button>
