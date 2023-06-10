@@ -26,7 +26,7 @@
 
 	export let colorType: ColorType = 'primary';
 	export let hideIcon = false;
-	export let customIcon: IconType = undefined;
+	export let customIcon: IconType | undefined = undefined;
 	// TODO: add a 'dismissable' prop
 </script>
 

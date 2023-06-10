@@ -11,11 +11,28 @@
 			Tailwind Elements
 		</Link>
 	</p>
+
+	<Heading classes="mt-4" tag="h4">Table of Contents</Heading>
+	<ul class="ml-6 list-disc">
+		<li><a href="#components">General Components</a></li>
+		<li><a href="#typography">Typography</a></li>
+		<li><a href="#icons-heading">Icons</a></li>
+	</ul>
 	<Divider />
 
-	<HeadingDemo />
+	<Heading id="components" tag="h2">General Components</Heading>
 	<AlertDemo />
 	<ButtonDemo />
 	<SpinnerDemo />
+	<Divider />
+
+	<!-- <Heading tag="h2">Form Stuff</Heading>
+	<Divider /> -->
+
+	<Heading id="typography" tag="h2">Typography</Heading>
+	<HeadingDemo />
+	<Divider />
+
+	<Heading id="icons-heading" tag="h2">Icons!</Heading>
 	<IconDemo />
 </main>
