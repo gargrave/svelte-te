@@ -8,6 +8,7 @@ import Spinner from './Spinner.svelte';
 
 export { Alert, Button, Divider, Heading, Icon, Link, Spinner };
 
+export * from './components.types';
+export * from './drawer';
 export * from './inputs';
-export * from './modals';
-export * from './components.types.ts';
+export * from './modal';

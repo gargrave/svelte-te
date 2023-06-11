@@ -1,5 +1,6 @@
 import AlertDemo from './Alert.demo.svelte';
 import ButtonDemo from './Button.demo.svelte';
+import DrawerDemo from './Drawer.demo.svelte';
 import HeadingDemo from './Heading.demo.svelte';
 import IconDemo from './Icon.demo.svelte';
 import InputFieldDemo from './InputField.demo.svelte';
@@ -10,6 +11,7 @@ import UiSection from './UiSection.svelte';
 export {
 	AlertDemo,
 	ButtonDemo,
+	DrawerDemo,
 	HeadingDemo,
 	IconDemo,
 	InputFieldDemo,
