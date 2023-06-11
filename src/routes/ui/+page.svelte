@@ -4,6 +4,7 @@
 	import {
 		AlertDemo,
 		ButtonDemo,
+		DrawerDemo,
 		HeadingDemo,
 		IconDemo,
 		InputFieldDemo,
@@ -13,8 +14,8 @@
 	import { Divider, Heading, Link } from '$lib/components';
 
 	onMount(async () => {
-		const { Modal, initTE } = await import('tw-elements');
-		initTE({ Modal });
+		const { Offcanvas, Modal, initTE } = await import('tw-elements');
+		initTE({ Offcanvas, Modal });
 	});
 </script>
 
@@ -46,6 +47,7 @@
 	<AlertDemo />
 	<ButtonDemo />
 	<ModalDemo />
+	<DrawerDemo />
 	<SpinnerDemo />
 	<Divider />
 
