@@ -1,6 +1,5 @@
 <!-- https://tailwind-elements.com/docs/standard/components/badges/ -->
 <script lang="ts">
-	import { select_multiple_value } from 'svelte/internal';
 	import type { ColorType } from './components.types';
 
 	type Size = 'sm' | 'md' | 'lg' | 'xl';

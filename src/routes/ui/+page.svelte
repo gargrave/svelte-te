@@ -1,6 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
-
 	import {
 		AlertDemo,
 		BadgeDemo,
@@ -12,18 +10,14 @@
 		ModalDemo,
 		SpinnerDemo
 	} from '$lib/demos';
-	import { Divider, Heading, Link } from '$lib/components';
-
-	onMount(async () => {
-		const { Offcanvas, Modal, initTE } = await import('tw-elements');
-		initTE({ Offcanvas, Modal });
-	});
+	import { Divider, Heading, Link, SvelteTE } from '$lib/components';
 </script>
 
 <svelte:head>
 	<title>Svelte TE | UI Demos</title>
 </svelte:head>
 
+<SvelteTE />
 <main class="p-8">
 	<Heading tag="h1">UI Demos</Heading>
 	<p class="pl-0.5">
