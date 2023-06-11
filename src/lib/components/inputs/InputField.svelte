@@ -10,6 +10,7 @@
 	export let disabled = false;
 </script>
 
+<!-- TODO: add "disabled" styling -->
 <div class="relative mb-4">
 	<label for={id} class="mb-1.5 pl-[2px] inline-block">{label}</label>
 	<input

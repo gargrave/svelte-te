@@ -59,12 +59,12 @@
 <div
 	{id}
 	bind:this={ref}
-	data-te-modal-init
-	class="fixed left-0 top-0 z-[1055] hidden h-full w-full
-		overflow-y-auto overflow-x-hidden outline-none"
 	tabindex="-1"
 	aria-labelledby={label}
-	aria-hidden="true">
+	aria-hidden="true"
+	data-te-modal-init
+	class="fixed left-0 top-0 z-[1055] hidden h-full w-full
+		overflow-y-auto overflow-x-hidden outline-none">
 	<div
 		data-te-modal-dialog-ref
 		class="_modal pointer-events-none relative w-auto mx-auto opacity-0
@@ -83,7 +83,7 @@
 				<Heading tag="h5" classes="text-xl font-medium leading-normal !mb-0" id={label}>
 					{title}
 				</Heading>
-				<ModalCloseButton {id} />
+				<ModalCloseButton {id} parentType="modal" />
 			</div>
 			<slot />
 		</div>

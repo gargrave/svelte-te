@@ -1,7 +1,6 @@
 <script>
-	import { Divider, Drawer } from '$lib/components';
 	import { UiSection } from '$lib/demos';
-	// import { FormModal, SimpleConfirmModal } from './components';
+	import SimpleDrawer from './components/SimpleDrawer.drawer.svelte';
 </script>
 
 <UiSection title="Drawer">
@@ -9,12 +8,6 @@
 		<p>It's like a Modal, but anchored to a side!</p>
 	</div>
 
-	<Drawer />
-
-	<!-- <p>This shows a modal with some basic text and a simple "close" button. No interactivity.</p>
-	<SimpleConfirmModal />
-	<Divider />
-
-	<p>This shows a modal with a form, loading state, and all that good stuff.</p>
-	<FormModal /> -->
+	<p>This shows a drawer with a form, loading state, and all that good stuff.</p>
+	<SimpleDrawer />
 </UiSection>
