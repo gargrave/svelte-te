@@ -18,14 +18,16 @@
 	<Divider />
 
 	<Heading tag="h5">Overlaid on other content</Heading>
-	<!-- TODO: replace with checkbox component when it exists -->
-	<label>
-		<input
-			type="checkbox"
-			checked={overlaySpinner}
-			on:change={() => (overlaySpinner = !overlaySpinner)} />
-		Show overlay spinner
-	</label>
+	<div class="mt-5">
+		<!-- TODO: replace with checkbox component when it exists -->
+		<label>
+			<input
+				type="checkbox"
+				checked={overlaySpinner}
+				on:change={() => (overlaySpinner = !overlaySpinner)} />
+			Show overlay spinner
+		</label>
+	</div>
 
 	<div class="relative p-2 mt-4 bg-info-800 flex-center rounded w-full h-24 text-white">
 		<p class="text-xl">This is some text! The loader will cover this element when activated.</p>

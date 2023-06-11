@@ -10,23 +10,17 @@
 <UiSection title="Button">
 	<div slot="blurb">
 		<p>Buttons! Click on them to make cool stuff happen!</p>
-		<label>
-			<input
-				class="mt-4"
-				type="checkbox"
-				checked={isLoading}
-				on:change={() => (isLoading = !isLoading)} />
-			Show loaders
-		</label>
+		<div class="mt-5 flex gap-4">
+			<label>
+				<input type="checkbox" checked={isLoading} on:change={() => (isLoading = !isLoading)} />
+				Show loaders
+			</label>
 
-		<label>
-			<input
-				class="ml-4"
-				type="checkbox"
-				checked={disabled}
-				on:change={() => (disabled = !disabled)} />
-			Disable all buttons
-		</label>
+			<label>
+				<input type="checkbox" checked={disabled} on:change={() => (disabled = !disabled)} />
+				Disable all buttons
+			</label>
+		</div>
 	</div>
 
 	<Heading tag="h5">Basic button types</Heading>

@@ -20,7 +20,7 @@
 
 <SvelteTE />
 <ToastProvider />
-<main class="p-8">
+<main class="p-3 min-[576px]:p-8">
 	<Heading tag="h1">UI Demos</Heading>
 	<p class="pl-0.5">
 		UI demos of components mostly based on

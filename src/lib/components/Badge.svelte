@@ -14,10 +14,10 @@
 	};
 
 	const textSizes: Record<Size, string> = {
-		sm: 'text-xs',
-		md: 'text-sm',
-		lg: 'text-base',
-		xl: 'text-lg'
+		sm: 'text-xs px-[6px] py-[3px]',
+		md: 'text-sm px-[8px] py-[4px]',
+		lg: 'text-base px-[9px] py-[5px]',
+		xl: 'text-lg px-[10px] py-[5px]'
 	};
 
 	export let colorType: ColorType = 'primary';
@@ -27,7 +27,7 @@
 
 <span
 	class="inline-block whitespace-nowrap {rounded ? 'rounded-full' : 'rounded-[0.27rem]'}
-    px-[0.65em] pb-[0.25em] pt-[0.35em] text-center {textSizes[size]}
+     text-center {textSizes[size]}
     align-baseline font-bold leading-tight {colorTypeStyles[colorType]}">
 	<slot />
 </span>
