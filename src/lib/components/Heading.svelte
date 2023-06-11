@@ -14,9 +14,6 @@
 	export let id: string | undefined = undefined;
 </script>
 
-<svelte:element
-	this={tag}
-	{id}
-	class="mb-2 mt-0 {color} {textSizes[tag]}{classes ? ` ${classes}` : ''}">
+<svelte:element this={tag} {id} class="mb-2 mt-0 {color} {textSizes[tag]} {classes}">
 	<slot />
 </svelte:element>

@@ -1,12 +1,20 @@
 <script>
 	import { onMount } from 'svelte';
 
-	import { AlertDemo, ButtonDemo, HeadingDemo, IconDemo, ModalDemo, SpinnerDemo } from '$lib/demos';
+	import {
+		AlertDemo,
+		ButtonDemo,
+		HeadingDemo,
+		IconDemo,
+		InputFieldDemo,
+		ModalDemo,
+		SpinnerDemo
+	} from '$lib/demos';
 	import { Divider, Heading, Link } from '$lib/components';
 
 	onMount(async () => {
-		const { Input, Modal, initTE } = await import('tw-elements');
-		initTE({ Input, Modal });
+		const { Modal, initTE } = await import('tw-elements');
+		initTE({ Modal });
 	});
 </script>
 
@@ -27,20 +35,23 @@
 	</ul>
 	<Divider />
 
-	<Heading id="components" tag="h2">General Components</Heading>
+	<Heading classes="!my-8 text-center text-5xl" id="components" tag="h2">
+		General Components
+	</Heading>
 	<AlertDemo />
 	<ButtonDemo />
 	<ModalDemo />
 	<SpinnerDemo />
 	<Divider />
 
-	<!-- <Heading tag="h2">Form Stuff</Heading>
-	<Divider /> -->
+	<Heading classes="!my-8 text-center text-5xl" id="forms" tag="h2">Form Stuff</Heading>
+	<InputFieldDemo />
+	<Divider />
 
-	<Heading id="typography" tag="h2">Typography</Heading>
+	<Heading classes="!my-8 text-center text-5xl" id="typography" tag="h2">Typography</Heading>
 	<HeadingDemo />
 	<Divider />
 
-	<Heading id="icons-heading" tag="h2">Icons!</Heading>
+	<Heading classes="!my-8 text-center text-5xl" id="icons-heading" tag="h2">Icons!</Heading>
 	<IconDemo />
 </main>

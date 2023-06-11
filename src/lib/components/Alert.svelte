@@ -34,7 +34,10 @@
 	class="mb-4 px-5 py-4 flex items-center justify-start gap-2
 		rounded-lg {colorTypeStyles[colorType]}"
 	role="alert">
-	{#if !hideIcon}<Icon icon={customIcon || iconsByType[colorType]} size={26} />{/if}
+	{#if !hideIcon}<Icon
+			classes="shrink-0"
+			icon={customIcon || iconsByType[colorType]}
+			size={26} />{/if}
 	<div class="pt-0.5">
 		<slot />
 	</div>
