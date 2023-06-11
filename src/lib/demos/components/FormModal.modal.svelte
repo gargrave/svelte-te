@@ -1,60 +1,43 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
-	import { Button, Modal, ModalBody, ModalFooter, type TeModal } from '$lib/components';
-	import Heading from '$lib/components/Heading.svelte';
-	import InputField from '$lib/components/inputs/InputField.svelte';
+	import { Button, Heading, InputField, Modal, ModalBody, ModalFooter } from '$lib/components';
 
 	const id = 'demoModal__form';
-	let modalRef: TeModal;
-	let isLoading = false;
 
 	const values = {
 		firstName: '',
 		lastName: ''
 	};
 
-	async function handleSubmit() {
-		isLoading = true;
-		await new Promise((resolve) => {
-			setTimeout(() => {
-				isLoading = false;
-				modalRef.hide();
-				resolve('ok');
-			}, 1500);
-		});
-	}
+	let isLoading = false;
 
-	function handleModalShow() {
+	$: valid = Object.values(values).every(Boolean);
+
+	function handleShow() {
 		values.firstName = '';
 		values.lastName = '';
 	}
 
-	onMount(async () => {
-		const { Modal } = await import('tw-elements');
-		const modalEl = document.getElementById(id);
+	async function handleSubmit() {
+		isLoading = true;
+		await new Promise((resolve) => {
+			setTimeout(() => {
+				const btn = document.getElementById(`${id}__close`);
+				if (btn) {
+					btn.click();
+				}
 
-		if (modalEl) {
-			modalRef = new Modal(modalEl);
-			modalEl.addEventListener('show.te.modal', handleModalShow);
-		}
-
-		return () => {
-			console.log(`CLEAR MODAL`);
-			if (modalEl) {
-				modalEl.removeEventListener('show.te.modal', handleModalShow);
-			}
-		};
-	});
-
-	$: valid = Object.values(values).every(Boolean);
+				isLoading = false;
+				resolve('ok');
+			}, 1500);
+		});
+	}
 </script>
 
 <div class="mt-4">
 	<Button data-te-toggle="modal" data-te-target="#{id}">Launch form modal</Button>
 </div>
 
-<Modal {id} title="Modal with a Form">
+<Modal {id} title="Modal with a Form" onShow={handleShow}>
 	<form on:submit|preventDefault={handleSubmit}>
 		<ModalBody>
 			<Heading tag="h6">Enter some data, and do a thing!</Heading>

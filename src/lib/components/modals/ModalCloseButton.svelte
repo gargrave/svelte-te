@@ -1,4 +1,9 @@
+<script lang="ts">
+	export let id: string;
+</script>
+
 <button
+	id="{id}__close"
 	type="button"
 	class="box-content rounded-none border-none
 		hover:no-underline hover:opacity-75"

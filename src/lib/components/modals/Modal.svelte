@@ -1,18 +1,64 @@
 <!-- https://tailwind-elements.com/docs/standard/components/modal -->
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	import Heading from '../Heading.svelte';
 	import ModalCloseButton from './ModalCloseButton.svelte';
+
+	const EVENT_SHOW = 'show.te.modal';
+	const EVENT_SHOWN = 'shown.te.modal';
+	const EVENT_HIDE = 'hide.te.modal';
+	const EVENT_HIDDEN = 'hidden.te.modal';
+
+	onMount(async () => {
+		if (ref) {
+			if (onShow) {
+				ref.addEventListener(EVENT_SHOW, onShow);
+			}
+			if (onShown) {
+				ref.addEventListener(EVENT_SHOWN, onShown);
+			}
+			if (onHide) {
+				ref.addEventListener(EVENT_HIDE, onHide);
+			}
+			if (onHidden) {
+				ref.addEventListener(EVENT_HIDDEN, onHidden);
+			}
+		}
+
+		return () => {
+			if (onShow) {
+				ref.removeEventListener(EVENT_SHOW, onShow);
+			}
+			if (onShown) {
+				ref.removeEventListener(EVENT_SHOWN, onShown);
+			}
+			if (onHide) {
+				ref.removeEventListener(EVENT_HIDE, onHide);
+			}
+			if (onHidden) {
+				ref.removeEventListener(EVENT_HIDDEN, onHidden);
+			}
+		};
+	});
+
+	let ref: HTMLDivElement;
 
 	export let id: string;
 	export let title: string;
 	export let maxWidth = 512;
 
+	export let onShow: (() => void) | undefined = undefined;
+	export let onShown: (() => void) | undefined = undefined;
+	export let onHide: (() => void) | undefined = undefined;
+	export let onHidden: (() => void) | undefined = undefined;
+
 	$: label = `${id}Label`;
 </script>
 
-<!-- Modal -->
 <div
 	{id}
+	bind:this={ref}
 	data-te-modal-init
 	class="fixed left-0 top-0 z-[1055] hidden h-full w-full
 		overflow-y-auto overflow-x-hidden outline-none"
@@ -37,9 +83,8 @@
 				<Heading tag="h5" classes="text-xl font-medium leading-normal !mb-0" id={label}>
 					{title}
 				</Heading>
-				<ModalCloseButton />
+				<ModalCloseButton {id} />
 			</div>
-
 			<slot />
 		</div>
 	</div>
