@@ -2,8 +2,14 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	import type { DrawerPosition } from '../components.types';
 	import Heading from '../Heading.svelte';
 	import ModalCloseButton from '../modal/ModalCloseButton.svelte';
+
+	const positionalStyles: Record<DrawerPosition, string> = {
+		left: 'w-96 top-0 bottom-0 left-0 -translate-x-full',
+		right: 'w-96 top-0 bottom-0 right-0 translate-x-full'
+	};
 
 	const EVENT_SHOW = 'show.te.offcanvas';
 	const EVENT_SHOWN = 'shown.te.offcanvas';
@@ -47,6 +53,7 @@
 	export let id: string;
 	export let title: string;
 	export let maxWidth = 512;
+	export let position: DrawerPosition = 'right';
 
 	export let onShow: (() => void) | undefined = undefined;
 	export let onShown: (() => void) | undefined = undefined;
@@ -62,8 +69,9 @@
 	tabindex="-1"
 	aria-labelledby={label}
 	data-te-offcanvas-init
-	class="invisible fixed bottom-0 left-0 top-0 z-[1045] flex w-96
-		max-w-full -translate-x-full flex-col border-none
+	class="_drawer invisible fixed z-[1045] {positionalStyles[
+		position
+	]} max-w-full flex-col border-none
 		bg-white bg-clip-padding text-neutral-700 shadow-sm outline-none
 		transition duration-300 ease-in-out dark:bg-neutral-800 dark:text-neutral-200
 		[&[data-te-offcanvas-show]]:transform-none"
@@ -76,3 +84,11 @@
 	</div>
 	<slot />
 </div>
+
+<style>
+	._drawer {
+		@media (max-width: 576px) {
+			max-width: calc(100vw - 44px) !important;
+		}
+	}
+</style>

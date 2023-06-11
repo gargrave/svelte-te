@@ -1,8 +1,14 @@
 <!-- https://tailwind-elements.com/docs/standard/navigation/offcanvas -->
 <script lang="ts">
-	import { Button, Drawer, Heading, InputField, ModalBody, ModalFooter } from '$lib/components';
-
-	const id = 'demoDrawer';
+	import {
+		Button,
+		Drawer,
+		Heading,
+		InputField,
+		ModalBody,
+		ModalFooter,
+		type DrawerPosition
+	} from '$lib/components';
 
 	const values = {
 		firstName: '',
@@ -10,7 +16,9 @@
 	};
 
 	let isLoading = false;
+	export let position: DrawerPosition;
 
+	$: id = `demoDrawer__${position}`;
 	$: valid = Object.values(values).every(Boolean);
 
 	function handleShow() {
@@ -35,10 +43,11 @@
 </script>
 
 <div class="mt-4">
-	<Button data-te-offcanvas-toggle data-te-target="#{id}" aria-controls={id}>Open Drawer</Button>
+	<Button data-te-offcanvas-toggle data-te-target="#{id}" aria-controls={id}
+		>Open drawer on {position}</Button>
 </div>
 
-<Drawer {id} title="Awesome Drawer Components" onShow={handleShow}>
+<Drawer {id} {position} title="Awesome Drawer Components" onShow={handleShow}>
 	<form on:submit|preventDefault={handleSubmit}>
 		<ModalBody>
 			<Heading tag="h6">Enter some data, and do a thing!</Heading>
