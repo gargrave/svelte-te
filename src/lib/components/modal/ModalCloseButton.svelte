@@ -1,5 +1,6 @@
 <script lang="ts">
 	export let id: string;
+	export let parentType: 'modal' | 'drawer';
 </script>
 
 <button
@@ -7,7 +8,8 @@
 	type="button"
 	class="box-content rounded-none border-none
 		hover:no-underline hover:opacity-75"
-	data-te-modal-dismiss
+	data-te-modal-dismiss={parentType === 'modal' ? 'true' : null}
+	data-te-offcanvas-dismiss={parentType === 'drawer' ? 'true' : null}
 	aria-label="Close">
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
