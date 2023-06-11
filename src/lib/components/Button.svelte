@@ -1,6 +1,7 @@
 <!-- https://tailwind-elements.com/docs/standard/components/buttons -->
 <!-- https://getbootstrap.com/docs/5.3/components/buttons -->
 <script lang="ts">
+	import { _ } from '$lib/utils';
 	import Spinner from './Spinner.svelte';
 	import type { ColorType } from './components.types';
 
@@ -34,11 +35,13 @@
 	export let type: 'button' | 'submit' = 'button';
 	export let isLoading = false;
 	export let disabled = false;
+	export let onClick: () => void = _.noop;
 </script>
 
 <button
 	{type}
 	{disabled}
+	on:click={onClick}
 	class="{buttonTypeStyles[colorType]} {textColor[colorType]}
 		inline-block relative rounded px-6 pb-2 pt-2.5 text-sm
 		font-medium uppercase leading-normal

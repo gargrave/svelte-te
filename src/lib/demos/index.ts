@@ -7,6 +7,7 @@ import IconDemo from './Icon.demo.svelte';
 import InputFieldDemo from './InputField.demo.svelte';
 import ModalDemo from './Modal.demo.svelte';
 import SpinnerDemo from './Spinner.demo.svelte';
+import ToastDemo from './Toast.demo.svelte';
 import UiSection from './UiSection.svelte';
 
 export {
@@ -17,7 +18,8 @@ export {
 	HeadingDemo,
 	IconDemo,
 	InputFieldDemo,
-	SpinnerDemo,
 	ModalDemo,
+	SpinnerDemo,
+	ToastDemo,
 	UiSection
 };

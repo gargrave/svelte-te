@@ -8,9 +8,10 @@
 		IconDemo,
 		InputFieldDemo,
 		ModalDemo,
-		SpinnerDemo
+		SpinnerDemo,
+		ToastDemo
 	} from '$lib/demos';
-	import { Divider, Heading, Link, SvelteTE } from '$lib/components';
+	import { Divider, Heading, Link, SvelteTE, ToastProvider } from '$lib/components';
 </script>
 
 <svelte:head>
@@ -18,6 +19,7 @@
 </svelte:head>
 
 <SvelteTE />
+<ToastProvider />
 <main class="p-8">
 	<Heading tag="h1">UI Demos</Heading>
 	<p class="pl-0.5">
@@ -30,6 +32,7 @@
 	<Heading classes="mt-4" tag="h4">Table of Contents</Heading>
 	<ul class="ml-6 list-disc">
 		<li><a href="#components">General Components</a></li>
+		<li><a href="#interactive">Interactive Stuff</a></li>
 		<li><a href="#forms">Form Stuff</a></li>
 		<li><a href="#typography">Typography</a></li>
 		<li><a href="#icons-heading">Icons</a></li>
@@ -42,9 +45,14 @@
 	<AlertDemo />
 	<BadgeDemo />
 	<ButtonDemo />
+	<SpinnerDemo />
+	<Divider />
+
+	<Heading classes="!my-8 text-center text-5xl" id="interactive" tag="h2"
+		>Interactive Stuff</Heading>
 	<ModalDemo />
 	<DrawerDemo />
-	<SpinnerDemo />
+	<ToastDemo />
 	<Divider />
 
 	<Heading classes="!my-8 text-center text-5xl" id="forms" tag="h2">Form Stuff</Heading>

@@ -10,7 +10,7 @@
 	</div>
 
 	<Heading tag="h5">Basic Badge types</Heading>
-	<div class="mt-4 flex items-end gap-2">
+	<div class="mt-4 flex flex-wrap items-end gap-2">
 		{#each colorTypes as colorType}
 			<Badge {colorType}>
 				<span>{colorType}</span>
@@ -20,7 +20,7 @@
 	<Divider />
 
 	<Heading tag="h5">Rounded badges</Heading>
-	<div class="mt-4 flex items-end gap-2">
+	<div class="mt-4 flex flex-wrap items-end gap-2">
 		{#each colorTypes as colorType}
 			<Badge {colorType} rounded>
 				<span>{colorType}</span>
@@ -30,7 +30,7 @@
 	<Divider />
 
 	<Heading tag="h5">Different sizes (default is 'sm')</Heading>
-	<div class="mt-4 flex items-end gap-2">
+	<div class="mt-4 flex flex-wrap items-end gap-2">
 		<Badge colorType="primary">Primary sm</Badge>
 		<Badge colorType="secondary" size="md">Secondary md</Badge>
 		<Badge colorType="success" size="lg">Success lg</Badge>

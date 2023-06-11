@@ -6,6 +6,7 @@
 	import type { ColorType } from './components.types';
 	import type { IconType } from './svg/IconMap';
 
+	// TODO: pull from utils
 	const iconsByType: Record<ColorType, IconType> = {
 		primary: 'InfoCircle',
 		secondary: 'InfoCircle',
@@ -15,6 +16,7 @@
 		info: 'InfoCircle'
 	};
 
+	// TODO: pull from utils
 	const colorTypeStyles: Record<ColorType, string> = {
 		primary: 'bg-primary-100 text-primary-600',
 		secondary: 'bg-secondary-200 text-secondary-800',
@@ -34,10 +36,9 @@
 	class="mb-4 px-5 py-4 flex items-center justify-start gap-2
 		rounded-lg {colorTypeStyles[colorType]}"
 	role="alert">
-	{#if !hideIcon}<Icon
-			classes="shrink-0"
-			icon={customIcon || iconsByType[colorType]}
-			size={26} />{/if}
+	{#if !hideIcon}
+		<Icon classes="shrink-0" icon={customIcon || iconsByType[colorType]} size={26} />
+	{/if}
 	<div class="pt-0.5">
 		<slot />
 	</div>
