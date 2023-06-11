@@ -9,6 +9,7 @@
 	const EVENT_SHOWN = 'shown.te.modal';
 	const EVENT_HIDE = 'hide.te.modal';
 	const EVENT_HIDDEN = 'hidden.te.modal';
+	//test
 
 	onMount(async () => {
 		if (ref) {
