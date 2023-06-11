@@ -18,6 +18,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Svelte TE | UI Demos</title>
+</svelte:head>
+
 <main class="p-8">
 	<Heading tag="h1">UI Demos</Heading>
 	<p class="pl-0.5">
@@ -30,6 +34,7 @@
 	<Heading classes="mt-4" tag="h4">Table of Contents</Heading>
 	<ul class="ml-6 list-disc">
 		<li><a href="#components">General Components</a></li>
+		<li><a href="#forms">Form Stuff</a></li>
 		<li><a href="#typography">Typography</a></li>
 		<li><a href="#icons-heading">Icons</a></li>
 	</ul>
