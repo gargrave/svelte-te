@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 
 	import type { DrawerPosition } from '../components.types';
-	import Heading from '../Heading.svelte';
+	import Heading from '../typography/Heading.svelte';
 	import ModalCloseButton from '../modal/ModalCloseButton.svelte';
 
 	const positionalStyles: Record<DrawerPosition, string> = {

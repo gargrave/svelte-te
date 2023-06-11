@@ -32,6 +32,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"immer": "^10.0.2",
+		"nanoid": "^4.0.2",
 		"tw-elements": "^1.0.0-beta2"
 	}
 }

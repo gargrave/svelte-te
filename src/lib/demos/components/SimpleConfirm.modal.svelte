@@ -1,6 +1,6 @@
 <script>
 	import { Button, Modal, ModalBody, ModalFooter } from '$lib/components';
-	import Heading from '$lib/components/Heading.svelte';
+	import Heading from '$lib/components/typography/Heading.svelte';
 
 	const id = 'demoModal__basic';
 </script>

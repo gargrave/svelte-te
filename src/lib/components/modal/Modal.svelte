@@ -2,7 +2,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	import Heading from '../Heading.svelte';
+	import Heading from '../typography/Heading.svelte';
 	import ModalCloseButton from './ModalCloseButton.svelte';
 
 	const EVENT_SHOW = 'show.te.modal';

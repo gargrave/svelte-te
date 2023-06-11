@@ -10,7 +10,6 @@
 	export let disabled = false;
 </script>
 
-<!-- TODO: add "disabled" styling -->
 <div class="relative mb-4">
 	<label for={id} class="mb-1.5 pl-[2px] inline-block">{label}</label>
 	<input
@@ -21,8 +20,9 @@
 			w-full border-0 outline-none
 			text-base leading-normal font-normal bg-clip-padding
 			transition-all duration-175 ease-in-out motion-reduce:transition-none
-			focus:outline-neutral-300 focus:outline-2 focus:outline-none
-			focus:placeholder:opacity-60"
+			focus:outline-neutral-300 focus:outline-2
+			focus:outline-none focus:placeholder:opacity-60
+			disabled:cursor-not-allowed disabled:opacity-50"
 		{id}
 		{placeholder}
 		{readonly}

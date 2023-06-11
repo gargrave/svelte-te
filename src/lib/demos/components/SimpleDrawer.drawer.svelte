@@ -47,7 +47,7 @@
 		>Open drawer on {position}</Button>
 </div>
 
-<Drawer {id} {position} title="Awesome Drawer Components" onShow={handleShow}>
+<Drawer {id} {position} title="Awesome Drawer Component" onShow={handleShow}>
 	<form on:submit|preventDefault={handleSubmit}>
 		<ModalBody>
 			<Heading tag="h6">Enter some data, and do a thing!</Heading>

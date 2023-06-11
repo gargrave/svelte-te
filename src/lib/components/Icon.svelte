@@ -1,6 +1,5 @@
+<!-- https://heroicons.com -->
 <script lang="ts">
-	// https://heroicons.com
-
 	import { iconMap, type IconType } from './svg/IconMap';
 
 	export let icon: IconType;
