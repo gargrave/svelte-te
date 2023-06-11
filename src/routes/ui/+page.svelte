@@ -3,6 +3,7 @@
 
 	import {
 		AlertDemo,
+		BadgeDemo,
 		ButtonDemo,
 		DrawerDemo,
 		HeadingDemo,
@@ -45,6 +46,7 @@
 		General Components
 	</Heading>
 	<AlertDemo />
+	<BadgeDemo />
 	<ButtonDemo />
 	<ModalDemo />
 	<DrawerDemo />
