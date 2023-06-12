@@ -2,7 +2,8 @@
 	import type { ColorType } from '../components.types';
 	import { iconsByType, textAndBgByColorType } from '../components.utils';
 	import Icon from '../Icon.svelte';
-	import type { ToastConfig } from './toast.store';
+	import { toastsStore, type ToastConfig } from './toast.store';
+	import ToastCloseButton from './ToastCloseButton.svelte';
 
 	export const borderByColorType: Record<ColorType, string> = {
 		primary: 'border-primary-600',
@@ -16,13 +17,15 @@
 	export let toast: ToastConfig;
 </script>
 
+<!-- data-te-toast-dismiss -->
 <div
-	class="p-2 w-full min-w-[256px] flex items-center gap-2
-		{textAndBgByColorType[toast.type]} rounded border {borderByColorType[toast.type]} shadow"
+	class="p-2 pr-0 w-full min-w-[256px] flex items-center justify-between gap-2
+		shadow pointer-events-auto {textAndBgByColorType[toast.type]}
+		rounded border {borderByColorType[toast.type]}"
 	role="alert"
 	aria-live="assertive"
 	aria-atomic="true">
-	<Icon classes="shrink-0 self-start" icon={iconsByType[toast.type]} size={26} />
+	<Icon classes="shrink-0" icon={iconsByType[toast.type]} size={26} />
 	<div>{toast.message}</div>
-	<!-- TODO: add a 'close' button here -->
+	<ToastCloseButton onClick={() => toastsStore.remove(toast.id)} />
 </div>
