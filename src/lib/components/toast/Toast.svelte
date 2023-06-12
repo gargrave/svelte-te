@@ -10,7 +10,7 @@
 		success: 'border-success-100',
 		danger: 'bg-danger-100',
 		warning: 'bg-warning-100',
-		info: 'bg-info-100'
+		info: 'bg-info-200'
 	};
 
 	export let toast: ToastConfig;
