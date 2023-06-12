@@ -14,14 +14,12 @@
 	<div slot="blurb">
 		<p>Input fields to write stuff in!</p>
 
-		<label>
-			<input
-				class="ml-4"
-				type="checkbox"
-				checked={disabled}
-				on:change={() => (disabled = !disabled)} />
-			Disable all inputs
-		</label>
+		<div class="mt-5">
+			<label>
+				<input type="checkbox" checked={disabled} on:change={() => (disabled = !disabled)} />
+				Disable all inputs
+			</label>
+		</div>
 	</div>
 
 	<div class="flex">
