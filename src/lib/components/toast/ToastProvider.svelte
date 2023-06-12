@@ -6,7 +6,7 @@
 	import { toastsStore } from './toast.store';
 	import Toast from './Toast.svelte';
 
-	const DEFAULT_DURATION = 99000;
+	const DEFAULT_DURATION = 4500;
 	const TRANSITION_DURATION = 350;
 
 	$: {
