@@ -9,17 +9,17 @@
 
 	const buttonTypeStyles: Record<ButtonType, string> = {
 		primary:
-			'bg-primary focus:bg-primary-600 active:bg-primary-700 [&:not(:disabled)]:hover:bg-primary-600',
+			'px-6 bg-primary focus:bg-primary-600 active:bg-primary-700 [&:not(:disabled)]:hover:bg-primary-600',
 		secondary:
-			'bg-secondary-200 [&:not(:disabled)]:hover:bg-secondary-400 focus:bg-secondary-400 active:bg-secondary-500',
+			'px-6 bg-secondary-200 [&:not(:disabled)]:hover:bg-secondary-400 focus:bg-secondary-400 active:bg-secondary-500',
 		success:
-			'bg-success [&:not(:disabled)]:hover:bg-success-600 focus:bg-success-600 active:bg-success-700',
+			'px-6 bg-success [&:not(:disabled)]:hover:bg-success-600 focus:bg-success-600 active:bg-success-700',
 		danger:
-			'bg-danger [&:not(:disabled)]:hover:bg-danger-600 focus:bg-danger-600 active:bg-danger-700',
+			'px-6 bg-danger [&:not(:disabled)]:hover:bg-danger-600 focus:bg-danger-600 active:bg-danger-700',
 		warning:
-			'bg-warning [&:not(:disabled)]:hover:bg-warning-600 focus:bg-warning-600 active:bg-warning-700',
-		info: 'bg-info [&:not(:disabled)]:hover:bg-info-600 focus:bg-info-600 active:bg-info-700',
-		link: '!px-3 bg-transparent [&:not(:disabled)]:hover:underline text-zinc-800 dark:text-zinc-100'
+			'px-6 bg-warning [&:not(:disabled)]:hover:bg-warning-600 focus:bg-warning-600 active:bg-warning-700',
+		info: 'px-6 bg-info [&:not(:disabled)]:hover:bg-info-600 focus:bg-info-600 active:bg-info-700',
+		link: 'px-3 bg-transparent [&:not(:disabled)]:hover:underline text-zinc-800 dark:text-zinc-100'
 	};
 
 	const textColor: Record<ButtonType, string> = {
@@ -37,11 +37,12 @@
 	export let type: 'button' | 'submit' = 'button';
 	export let isLoading = false;
 	export let disabled = false;
+	export let classes = '';
 	export let onClick: () => void = _.noop;
 
 	const shadowStyles =
 		colorType === 'link'
-			? undefined
+			? ''
 			: `
 shadow-[0_4px_9px_-4px_#3b71ca]
 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]
@@ -58,12 +59,13 @@ dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113
 	{type}
 	disabled={disabled || (colorType === 'link' && isLoading)}
 	on:click={onClick}
-	class="{buttonTypeStyles[colorType]} {textColor[colorType]} {shadowStyles}
-		inline-block relative rounded px-6 pb-2 pt-2.5 text-sm
+	class="pb-2 pt-2.5
+		{buttonTypeStyles[colorType]} {textColor[colorType]} {shadowStyles}
+		inline-block relative rounded
 		font-medium uppercase leading-normal
 		transition duration-150 ease-in-out
 		focus:outline-none focus:ring-0
-		disabled:cursor-not-allowed disabled:opacity-50"
+		disabled:cursor-not-allowed disabled:opacity-50 {classes}"
 	class:w-full={block}
 	{...$$restProps}>
 	<slot />
