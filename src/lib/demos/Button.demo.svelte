@@ -11,6 +11,7 @@
 	<div slot="blurb">
 		<p>Buttons! Click on them to make cool stuff happen!</p>
 		<div class="mt-5 flex gap-4">
+			<!-- TODO: replace with checkbox component when it exists -->
 			<label>
 				<input type="checkbox" checked={isLoading} on:change={() => (isLoading = !isLoading)} />
 				Show loaders
@@ -24,12 +25,12 @@
 	</div>
 
 	<Heading tag="h5">Basic button types</Heading>
-	<!-- TODO: replace with checkbox component when it exists -->
 
 	<div class="flex flex-wrap gap-2">
 		{#each colorTypes as colorType}
 			<Button {colorType} {isLoading} {disabled}>{colorType}</Button>
 		{/each}
+		<Button colorType="link" {isLoading} {disabled}>Link</Button>
 	</div>
 	<Divider />
 
