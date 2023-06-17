@@ -4,6 +4,7 @@
 		BadgeDemo,
 		ButtonDemo,
 		DrawerDemo,
+		DropdownDemo,
 		HeadingDemo,
 		IconDemo,
 		InputFieldDemo,
@@ -52,6 +53,7 @@
 		>Interactive Stuff</Heading>
 	<ModalDemo />
 	<DrawerDemo />
+	<DropdownDemo />
 	<ToastDemo />
 	<Divider />
 

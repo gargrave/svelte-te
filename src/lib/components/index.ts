@@ -11,6 +11,7 @@ export { Alert, Badge, Button, Divider, Icon, Link, Spinner, SvelteTE };
 
 export * from './components.types';
 export * from './drawer';
+export * from './dropdown';
 export * from './inputs';
 export * from './modal';
 export * from './toast';

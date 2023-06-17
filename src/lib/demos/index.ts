@@ -2,6 +2,7 @@ import AlertDemo from './Alert.demo.svelte';
 import BadgeDemo from './Badge.demo.svelte';
 import ButtonDemo from './Button.demo.svelte';
 import DrawerDemo from './Drawer.demo.svelte';
+import DropdownDemo from './Dropdown.demo.svelte';
 import HeadingDemo from './Heading.demo.svelte';
 import IconDemo from './Icon.demo.svelte';
 import InputFieldDemo from './InputField.demo.svelte';
@@ -15,6 +16,7 @@ export {
 	BadgeDemo,
 	ButtonDemo,
 	DrawerDemo,
+	DropdownDemo,
 	HeadingDemo,
 	IconDemo,
 	InputFieldDemo,

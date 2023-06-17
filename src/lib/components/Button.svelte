@@ -21,7 +21,7 @@
 		info: 'px-6 bg-info [&:not(:disabled)]:hover:bg-info-600 focus:bg-info-600 [&:not(:disabled)]:active:bg-info-700',
 		link: 'px-3 bg-transparent [&:not(:disabled)]:hover:underline text-zinc-800 dark:text-zinc-100',
 		ghost:
-			'px-3 bg-white bg-opacity-0 [&:not(:disabled)]:hover:bg-opacity-10 text-zinc-800 dark:text-zinc-100'
+			'px-3 bg-white bg-opacity-0 [&:not(:disabled)]:hover:bg-opacity-10 [&:not(:disabled)]:focus:bg-opacity-10 [&:not(:disabled)]:active:bg-opacity-10 text-zinc-800 dark:text-zinc-100'
 	};
 
 	const textColor: Record<ButtonType, string> = {
@@ -38,6 +38,7 @@
 	export let colorType: ButtonType = 'primary';
 	export let block = false;
 	export let type: 'button' | 'submit' = 'button';
+	export let id: string | undefined = undefined;
 	export let isLoading = false;
 	export let disabled = false;
 	export let classes = '';
@@ -61,6 +62,7 @@ dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113
 <button
 	{type}
 	{disabled}
+	{id}
 	on:click={onClick}
 	class="pb-2 pt-2.5
 		{buttonTypeStyles[colorType]} {textColor[colorType]} {shadowStyles}
