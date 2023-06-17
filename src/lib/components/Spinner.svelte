@@ -26,7 +26,9 @@
 	export let asOverlay = false;
 
 	$: sizeStyle = `h-${sizes[size]} w-${sizes[size]}`;
-	$: overlayStyle = asOverlay ? 'absolute left-1/2 top-1/2 trans-neg-50' : 'inline-block';
+	$: overlayStyle = asOverlay
+		? 'absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%]'
+		: 'inline-block';
 </script>
 
 {#if asOverlay}
