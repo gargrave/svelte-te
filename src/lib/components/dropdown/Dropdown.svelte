@@ -41,7 +41,7 @@
 			min-w-max list-none flex-col items-start
 			overflow-hidden rounded-lg text-left text-base shadow-lg
 			bg-white bg-clip-padding
-			border border-zinc-900
+			border border-zinc-500
 			dark:bg-neutral-800 dark:text-neutral-200
 			[&[data-te-dropdown-show]]:flex {menuClasses}"
 		aria-labelledby={id}

@@ -61,9 +61,3 @@ function createStore() {
 }
 
 export const toastsStore = createStore();
-if (browser) {
-	toastsStore.subscribe((s) => {
-		console.log('=== TOAST STORE ===');
-		console.log(JSON.parse(JSON.stringify(s)));
-	});
-}
