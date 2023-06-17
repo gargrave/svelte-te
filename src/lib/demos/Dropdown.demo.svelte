@@ -24,7 +24,7 @@
 	</div>
 
 	<p>This shows a few different configurations and menu positions.</p>
-	<div class="mt-4 flex gap-2">
+	<div class="mt-4 flex flex-wrap gap-2">
 		<Dropdown id="DropdownDemo1" menuItems={demoItems1}>Default Dropdown</Dropdown>
 		<Dropdown id="DropdownDemo2" buttonType="secondary" menuItems={demoItems1} position="right">
 			Right
