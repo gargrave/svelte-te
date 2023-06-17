@@ -7,10 +7,11 @@
 </script>
 
 <div
-	class="p-4 flex flex-shrink-0 flex-wrap items-center justify-end gap-2 rounded-b-md
-		border-t-2 border-neutral-100 border-opacity-100 dark:border-opacity-50">
+	class="p-4 flex flex-shrink-0 flex-wrap items-center justify-end gap-2 border-t border-zinc-600">
 	{#if includeCloseButton}
-		<Button colorType={'secondary'} data-te-modal-dismiss>{closeButtonText}</Button>
+		<Button colorType={'secondary'} data-te-modal-dismiss>
+			{closeButtonText}
+		</Button>
 	{/if}
 	<slot />
 </div>

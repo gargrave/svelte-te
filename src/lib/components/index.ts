@@ -16,3 +16,4 @@ export * from './inputs';
 export * from './modal';
 export * from './toast';
 export * from './typography';
+export * from './utils';

@@ -1,5 +1,7 @@
 <!-- https://tailwind-elements.com/docs/standard/forms/inputs -->
 <script lang="ts">
+	import Label from './Label.svelte';
+
 	export let id: string;
 	export let label: string;
 	export let value: string;
@@ -11,7 +13,7 @@
 </script>
 
 <div class="relative mb-4">
-	<label for={id} class="mb-1.5 pl-[2px] inline-block">{label}</label>
+	<Label {id} {label} />
 	<input
 		bind:value
 		type="text"
@@ -24,6 +26,7 @@
 			focus:outline-none focus:placeholder:opacity-60
 			disabled:cursor-not-allowed disabled:opacity-50"
 		{id}
+		name={id}
 		{placeholder}
 		{readonly}
 		{required}
