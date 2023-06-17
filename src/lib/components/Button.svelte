@@ -5,21 +5,23 @@
 	import Spinner from './Spinner.svelte';
 	import type { ColorType } from './components.types';
 
-	type ButtonType = ColorType | 'link';
+	type ButtonType = ColorType | 'link' | 'ghost';
 
 	const buttonTypeStyles: Record<ButtonType, string> = {
 		primary:
-			'px-6 bg-primary focus:bg-primary-600 active:bg-primary-700 [&:not(:disabled)]:hover:bg-primary-600',
+			'px-6 bg-primary focus:bg-primary-600 [&:not(:disabled)]:active:bg-primary-700 [&:not(:disabled)]:hover:bg-primary-600',
 		secondary:
-			'px-6 bg-secondary-200 [&:not(:disabled)]:hover:bg-secondary-400 focus:bg-secondary-400 active:bg-secondary-500',
+			'px-6 bg-secondary-200 [&:not(:disabled)]:hover:bg-secondary-400 focus:bg-secondary-400 [&:not(:disabled)]:active:bg-secondary-500',
 		success:
-			'px-6 bg-success [&:not(:disabled)]:hover:bg-success-600 focus:bg-success-600 active:bg-success-700',
+			'px-6 bg-success [&:not(:disabled)]:hover:bg-success-600 focus:bg-success-600 [&:not(:disabled)]:active:bg-success-700',
 		danger:
-			'px-6 bg-danger [&:not(:disabled)]:hover:bg-danger-600 focus:bg-danger-600 active:bg-danger-700',
+			'px-6 bg-danger [&:not(:disabled)]:hover:bg-danger-600 focus:bg-danger-600 [&:not(:disabled)]:active:bg-danger-700',
 		warning:
-			'px-6 bg-warning [&:not(:disabled)]:hover:bg-warning-600 focus:bg-warning-600 active:bg-warning-700',
-		info: 'px-6 bg-info [&:not(:disabled)]:hover:bg-info-600 focus:bg-info-600 active:bg-info-700',
-		link: 'px-3 bg-transparent [&:not(:disabled)]:hover:underline text-zinc-800 dark:text-zinc-100'
+			'px-6 bg-warning [&:not(:disabled)]:hover:bg-warning-600 focus:bg-warning-600 [&:not(:disabled)]:active:bg-warning-700',
+		info: 'px-6 bg-info [&:not(:disabled)]:hover:bg-info-600 focus:bg-info-600 [&:not(:disabled)]:active:bg-info-700',
+		link: 'px-3 bg-transparent [&:not(:disabled)]:hover:underline text-zinc-800 dark:text-zinc-100',
+		ghost:
+			'px-3 bg-white bg-opacity-0 [&:not(:disabled)]:hover:bg-opacity-10 text-zinc-800 dark:text-zinc-100'
 	};
 
 	const textColor: Record<ButtonType, string> = {
@@ -29,7 +31,8 @@
 		danger: 'text-white',
 		warning: 'text-white',
 		info: 'text-white',
-		link: 'text-white'
+		link: 'text-white',
+		ghost: 'text-white'
 	};
 
 	export let colorType: ButtonType = 'primary';
@@ -38,10 +41,10 @@
 	export let isLoading = false;
 	export let disabled = false;
 	export let classes = '';
-	export let onClick: () => void = _.noop;
+	export let onClick: (event: MouseEvent) => void = _.noop;
 
 	const shadowStyles =
-		colorType === 'link'
+		colorType === 'link' || colorType === 'ghost'
 			? ''
 			: `
 shadow-[0_4px_9px_-4px_#3b71ca]
@@ -57,7 +60,7 @@ dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113
 
 <button
 	{type}
-	disabled={disabled || (colorType === 'link' && isLoading)}
+	{disabled}
 	on:click={onClick}
 	class="pb-2 pt-2.5
 		{buttonTypeStyles[colorType]} {textColor[colorType]} {shadowStyles}

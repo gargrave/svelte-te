@@ -31,6 +31,7 @@
 			<Button {colorType} {isLoading} {disabled}>{colorType}</Button>
 		{/each}
 		<Button colorType="link" {isLoading} {disabled}>Link</Button>
+		<Button colorType="ghost" {isLoading} {disabled}>Ghost</Button>
 	</div>
 	<Divider />
 
