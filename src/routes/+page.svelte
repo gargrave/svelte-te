@@ -4,6 +4,7 @@
 
 <svelte:head>
 	<title>Svelte TE | Home</title>
+	<meta name="description" content="A Svelte component library based on Tailwind Elements." />
 </svelte:head>
 
 <main class="p-8">

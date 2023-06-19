@@ -17,6 +17,7 @@
 
 <svelte:head>
 	<title>Svelte TE | UI Demos</title>
+	<meta name="description" content="A Svelte component library based on Tailwind Elements." />
 </svelte:head>
 
 <SvelteTE />
