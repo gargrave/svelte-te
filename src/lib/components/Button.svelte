@@ -64,14 +64,22 @@ dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,
 dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]
 `;
 
+	let timeout: number;
 	function handleClick(event: MouseEvent) {
 		event.stopPropagation();
+
+		if (!confirmText) {
+			onClick(event);
+			return;
+		}
+
 		if (isConfirming) {
+			clearTimeout(timeout);
 			onClick(event);
 			isConfirming = false;
 		} else {
 			isConfirming = true;
-			setTimeout(() => {
+			timeout = setTimeout(() => {
 				isConfirming = false;
 				onConfirmTimeout();
 			}, confirmTimeout);
