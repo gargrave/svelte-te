@@ -73,7 +73,7 @@
 		<div
 			class="pointer-events-auto relative flex w-full flex-col rounded-md
 				border-none bg-white bg-clip-padding text-current shadow-lg outline-none
-				top-1/2 min-[576px]:translate-y-[-75%] max-[576px]:translate-y-[-50%]
+				top-1/2 translate-y-[-50%]
 				dark:bg-zinc-800 min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)]">
 			<!-- ModalHeader -->
 			<div
@@ -82,6 +82,7 @@
 				<Heading tag="h5" classes="text-xl font-medium leading-normal !mb-0" id={label}>
 					{title}
 				</Heading>
+				<slot name="header" />
 				<ModalCloseButton {id} parentType="modal" />
 			</div>
 			<slot />

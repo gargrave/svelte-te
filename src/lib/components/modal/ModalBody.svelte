@@ -3,8 +3,13 @@
 </div>
 
 <style>
+	:root {
+		--header-height: 64px;
+		--touch-buffer: 40px;
+	}
+
 	._modal-body {
-		max-height: calc(100vh - 73px - 64px - 88px);
+		max-height: calc(100vh - var(--header-height) - (var(--touch-buffer) * 2));
 		overflow-y: auto;
 	}
 </style>
