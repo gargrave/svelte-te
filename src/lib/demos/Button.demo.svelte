@@ -1,5 +1,5 @@
 <script>
-	import { Button, Divider, Heading } from '$lib/components';
+	import { Button, Divider, Heading, toastsStore } from '$lib/components';
 	import { UiSection } from '$lib/demos';
 	import { colorTypes } from './demos.helpers';
 
@@ -41,5 +41,29 @@
 		{#each colorTypes as colorType}
 			<Button {colorType} block {isLoading} {disabled}>{colorType}</Button>
 		{/each}
+	</div>
+	<Divider />
+
+	<Heading tag="h5">Confirm button</Heading>
+	<p>
+		Pass in a string value for <code>confirmText</code> prop to make a button that requires two clicks
+		to trigger!
+	</p>
+	<div class="mt-4">
+		<Button
+			colorType="danger"
+			confirmText="Kill it?"
+			onClick={() => {
+				toastsStore.enqueue({
+					message: 'Deletion confirmed!',
+					type: 'success'
+				});
+			}}
+			onConfirmTimeout={() => {
+				toastsStore.enqueue({
+					message: "You didn't respond in time...",
+					type: 'info'
+				});
+			}}>Delete</Button>
 	</div>
 </UiSection>
