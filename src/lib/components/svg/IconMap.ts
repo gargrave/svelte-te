@@ -7,6 +7,7 @@ import ExclamationTriangle from './ExclamationTriangle.svelte';
 import Folder from './Folder.svelte';
 import InfoCircle from './InfoCircle.svelte';
 import PlusCircle from './PlusCircle.svelte';
+import Trash from './Trash.svelte';
 import XCircle from './XCircle.svelte';
 import XMark from './XMark.svelte';
 
@@ -18,6 +19,7 @@ export type IconType =
 	| 'Folder'
 	| 'InfoCircle'
 	| 'PlusCircle'
+	| 'Trash'
 	| 'XCircle'
 	| 'XMark';
 
@@ -29,6 +31,7 @@ export const iconMap: Record<IconType, ComponentType> = {
 	Folder: Folder,
 	InfoCircle: InfoCircle,
 	PlusCircle: PlusCircle,
+	Trash: Trash,
 	XCircle: XCircle,
 	XMark: XMark
 };
