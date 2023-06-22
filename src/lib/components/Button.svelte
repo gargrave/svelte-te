@@ -7,14 +7,15 @@
 
 	type ButtonType = ColorType | 'utility' | 'link' | 'ghost';
 
+	// TODO: add size styling; based on 'size' prop instead of 'type'
 	const buttonTypeStyles: Record<ButtonType, string> = {
-		primary: 'px-6',
-		secondary: 'px-6',
-		success: 'px-6',
-		danger: 'px-6',
-		warning: 'px-6',
-		info: 'px-6',
-		utility: 'px-3',
+		primary: 'px-5',
+		secondary: 'px-5',
+		success: 'px-5',
+		danger: 'px-5',
+		warning: 'px-5',
+		info: 'px-5',
+		utility: 'px-5',
 		link: 'px-3',
 		ghost: 'px-3'
 	};
@@ -32,22 +33,22 @@
 			'bg-warning [&:not(:disabled)]:hover:bg-warning-600 focus:bg-warning-600 [&:not(:disabled)]:active:bg-warning-700',
 		info: 'bg-info [&:not(:disabled)]:hover:bg-info-600 focus:bg-info-600 [&:not(:disabled)]:active:bg-info-700',
 		utility:
-			'bg-white bg-opacity-0 [&:not(:disabled)]:hover:bg-opacity-10 [&:not(:disabled)]:focus:bg-opacity-10 [&:not(:disabled)]:active:bg-opacity-10',
-		link: 'bg-transparent',
+			'bg-neutral-100 border-2 border-neutral-300 bg-opacity-0 [&:not(:disabled)]:hover:bg-opacity-10 [&:not(:disabled)]:focus:bg-opacity-10 [&:not(:disabled)]:active:bg-opacity-20',
+		link: 'bg-transparent [&:not(:disabled)]:hover:underline',
 		ghost:
-			'bg-white bg-opacity-0 [&:not(:disabled)]:hover:bg-opacity-10 [&:not(:disabled)]:active:bg-opacity-10'
+			'bg-neutral-100 bg-opacity-0 [&:not(:disabled)]:hover:bg-opacity-10 [&:not(:disabled)]:active:bg-opacity-20'
 	};
 
 	const textStyles: Record<ButtonType, string> = {
-		primary: 'text-white',
-		secondary: 'text-secondary-800',
-		success: 'text-white',
-		danger: 'text-white',
-		warning: 'text-white',
-		info: 'text-white',
-		utility: 'text-white text-zinc-800 dark:text-zinc-100',
-		link: 'text-white text-zinc-800 dark:text-zinc-100 [&:not(:disabled)]:hover:underline',
-		ghost: 'text-white text-zinc-800 dark:text-zinc-100'
+		primary: 'dark:text-neutral-100',
+		secondary: 'dark:text-zinc-600',
+		success: 'dark:text-neutral-100',
+		danger: 'dark:text-neutral-100',
+		warning: 'dark:text-neutral-100',
+		info: 'dark:text-neutral-100',
+		utility: 'dark:text-neutral-200',
+		link: 'dark:text-neutral-200',
+		ghost: 'dark:text-neutral-200'
 	};
 
 	let isConfirming = false;
