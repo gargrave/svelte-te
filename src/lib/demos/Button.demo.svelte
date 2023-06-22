@@ -13,12 +13,20 @@
 		<div class="mt-5 flex gap-4">
 			<!-- TODO: replace with checkbox component when it exists -->
 			<label>
-				<input type="checkbox" checked={isLoading} on:change={() => (isLoading = !isLoading)} />
+				<input
+					type="checkbox"
+					checked={isLoading}
+					on:change={() => (isLoading = !isLoading)}
+				/>
 				Show loaders
 			</label>
 
 			<label>
-				<input type="checkbox" checked={disabled} on:change={() => (disabled = !disabled)} />
+				<input
+					type="checkbox"
+					checked={disabled}
+					on:change={() => (disabled = !disabled)}
+				/>
 				Disable all buttons
 			</label>
 		</div>
@@ -30,6 +38,7 @@
 		{#each colorTypes as colorType}
 			<Button {colorType} {isLoading} {disabled}>{colorType}</Button>
 		{/each}
+		<Button colorType="utility" {isLoading} {disabled}>Utility</Button>
 		<Button colorType="link" {isLoading} {disabled}>Link</Button>
 		<Button colorType="ghost" {isLoading} {disabled}>Ghost</Button>
 	</div>
@@ -41,13 +50,14 @@
 		{#each colorTypes as colorType}
 			<Button {colorType} block {isLoading} {disabled}>{colorType}</Button>
 		{/each}
+		<Button colorType="utility" block {isLoading} {disabled}>Utility</Button>
 	</div>
 	<Divider />
 
 	<Heading tag="h5">Confirm button</Heading>
 	<p>
-		Pass in a string value for <code>confirmText</code> prop to make a button that requires two clicks
-		to trigger!
+		Pass in a string value for <code>confirmText</code> prop to make a button that
+		requires two clicks to trigger!
 	</p>
 	<div class="mt-4">
 		<Button
@@ -64,6 +74,7 @@
 					message: "You didn't respond in time...",
 					type: 'info'
 				});
-			}}>Delete</Button>
+			}}>Delete</Button
+		>
 	</div>
 </UiSection>
