@@ -69,15 +69,19 @@
 	tabindex="-1"
 	aria-labelledby={label}
 	data-te-offcanvas-init
-	class="_drawer invisible fixed z-[1045] {positionalStyles[
-		position
-	]} max-w-full flex-col border-none
+	class="_drawer invisible fixed z-[1045]
+		{positionalStyles[position]} max-w-full flex-col border-none
 		bg-white bg-clip-padding text-neutral-700 shadow-sm outline-none
 		transition duration-300 ease-in-out dark:bg-neutral-800 dark:text-neutral-200
 		[&[data-te-offcanvas-show]]:transform-none"
-	style:max-width="{maxWidth}px">
+	style:max-width="min({maxWidth}px, 100vw)"
+>
 	<div class="flex items-center justify-between p-4">
-		<Heading tag="h5" classes="text-xl font-medium leading-normal !mb-0" id={label}>
+		<Heading
+			tag="h5"
+			classes="text-xl font-medium leading-normal !mb-0"
+			id={label}
+		>
 			{title}
 		</Heading>
 		<ModalCloseButton {id} parentType="drawer" />
