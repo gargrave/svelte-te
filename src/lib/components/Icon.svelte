@@ -14,7 +14,10 @@
 	stroke-width="1.5"
 	stroke="currentColor"
 	class="inline-block {classes}"
+	height={size}
+	width={size}
 	style:height={size}
-	style:width={size}>
+	style:width={size}
+>
 	<svelte:component this={iconMap[icon]} />
 </svg>
