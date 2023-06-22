@@ -1,5 +1,11 @@
 <script>
-	import { Button, Divider, Heading, toastsStore } from '$lib/components';
+	import {
+		Button,
+		ButtonGroup,
+		Divider,
+		Heading,
+		toastsStore
+	} from '$lib/components';
 	import { UiSection } from '$lib/demos';
 	import { colorTypes } from './demos.helpers';
 
@@ -76,5 +82,18 @@
 				});
 			}}>Delete</Button
 		>
+	</div>
+	<Divider />
+
+	<Heading tag="h5">Button Groups</Heading>
+	<p>
+		Wrap multiple buttons in a <code>ButtonGroup</code> component to collapse them!
+	</p>
+	<div class="mt-4">
+		<ButtonGroup>
+			<Button colorType="utility">One</Button>
+			<Button colorType="utility">Two</Button>
+			<Button colorType="utility">Three</Button>
+		</ButtonGroup>
 	</div>
 </UiSection>
