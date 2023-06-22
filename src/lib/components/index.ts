@@ -5,6 +5,7 @@ import ButtonGroup from './ButtonGroup.svelte';
 import Divider from './Divider.svelte';
 import Icon from './Icon.svelte';
 import Link from './Link.svelte';
+import Portal from './Portal.svelte';
 import Spinner from './Spinner.svelte';
 import SvelteTE from './SvelteTE.svelte';
 
@@ -16,6 +17,7 @@ export {
 	Divider,
 	Icon,
 	Link,
+	Portal,
 	Spinner,
 	SvelteTE
 };
